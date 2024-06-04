@@ -61,4 +61,8 @@ deploy:
 	git update-ref -d refs/heads/gh-pages
 	git push --force
 
+chmod:
+	@chmod +x *.sh
+	@echo "All shell scripts are now executable."
+
 all: format lint test run
