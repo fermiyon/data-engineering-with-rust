@@ -20,7 +20,7 @@ build:
 	mdbook build data-eng-rust-tutorial
 
 serve:
-	mdbook serve -p 8000 -n 127.0.0.1 data-eng-rust-tutorial 
+	mdbook serve -p 8000 -n 127.0.0.1 data-engineering-with-rust
 
 format:
 	@echo "Formatting all projects with cargo"
@@ -39,7 +39,7 @@ check-gpu-linux:
 	sudo lshw -C display
 
 linkcheck:
-	mdbook test -L data-eng-rust-tutorial
+	mdbook test -L data-engineering-with-rust
 
 run:
 	cargo run
