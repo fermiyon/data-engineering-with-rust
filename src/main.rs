@@ -1,3 +1,15 @@
+// Basic Rayon parallel map example  
+use rayon::prelude::*;
+
+fn rayon_example() {
+  let vals = vec![1, 2, 3];
+  let squared = vals.par_iter() // Rayon parallel iterator 
+    .map(|x| x * x)  
+    .collect::<Vec<_>>(); 
+  
+  println!("{:?}", squared);   
+}
+
 // a function that finds out the average of several numbers and returns it
 fn average(numbers: &[f64]) -> f64 {
     let mut sum = 0.0;
@@ -15,9 +27,8 @@ fn average(numbers: &[f64]) -> f64 {
 // this is the entry point of the program
 fn main() {
     // create a numbers list
-    let numbers = [1.0, 2.0, 3.0, 4.0, 5.0];
-    println!("{}", average(&numbers));
-    println!("Hello, world!");
-    let x = 5;
-    println!("The value of x is: {}", x);
+    let result = project::add(1, 2);
+    println!("{}", result);
+    rayon_example()
+
 }
