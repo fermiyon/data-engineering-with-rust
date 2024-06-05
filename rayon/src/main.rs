@@ -1,13 +1,14 @@
-// Basic Rayon parallel map example  
+// Basic Rayon parallel map example
 use rayon::prelude::*;
 
 fn rayon_example() {
-  let vals = vec![1, 2, 3];
-  let squared = vals.par_iter() // Rayon parallel iterator 
-    .map(|x| x * x)  
-    .collect::<Vec<_>>(); 
-  
-  println!("{:?}", squared);   
+    let vals = vec![1, 2, 3];
+    let squared = vals
+        .par_iter() // Rayon parallel iterator
+        .map(|x| x * x)
+        .collect::<Vec<_>>();
+
+    println!("{:?}", squared);
 }
 
 // a function that finds out the average of several numbers and returns it
@@ -30,5 +31,4 @@ fn main() {
     let result = project::add(1, 2);
     println!("{}", result);
     rayon_example()
-
 }
