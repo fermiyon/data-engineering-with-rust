@@ -20,6 +20,6 @@ fn main() {
 
     match create_fruit_salad(num_fruits) {
         Ok(salad) => println!("{:?}", salad),
-        Err(e) => println!("Error: {}", e),
+        Err(e) => eprintln!("Error: {}", e),
     }
 }
